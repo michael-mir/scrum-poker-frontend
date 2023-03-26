@@ -9,9 +9,6 @@ module.exports = (phase) => {
     experimental: {
       forceSwcTransforms: true
     },
-    sassOptions: {
-      prependData: '@import "mixins"; @import "variables";'
-    },
     compiler: {
       ...(isProdBuild && {
         reactRemoveProperties: { properties: ['^data-testid$'] },

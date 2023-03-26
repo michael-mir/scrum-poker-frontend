@@ -1,16 +1,10 @@
-/*
-  0 - off,
-  1 - warning,
-  2 - error
-*/
-
 module.exports = {
   root: true,
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 'latest',
     ecmaFeatures: { jsx: true },
-    project: './tsconfig.eslint.json'
+    project: './tsconfig.json'
   },
   env: { es2021: true, browser: true },
   extends: [
@@ -25,44 +19,37 @@ module.exports = {
     'plugin:@next/next/recommended',
     'plugin:prettier/recommended'
   ],
-  plugins: ['simple-import-sort'],
   rules: {
-    /* [ERROR === 2] */
-    '@typescript-eslint/consistent-type-imports': [2, { disallowTypeAnnotations: false }],
+    /* [ERROR] */
+    '@typescript-eslint/consistent-type-imports': ['error', { disallowTypeAnnotations: false }],
     'react/function-component-definition': [
-      2,
+      'error',
       {
         namedComponents: ['arrow-function'],
         unnamedComponents: 'arrow-function'
       }
     ],
-    'no-shadow': 2,
-    /* [WARN === 1] */
-    'no-console': [1, { allow: ['info', 'error'] }],
-    'react-hooks/exhaustive-deps': 1,
-    'react/no-array-index-key': 1,
-    'simple-import-sort/exports': 1,
-    'simple-import-sort/imports': [
-      1,
+    'no-shadow': 'error',
+    'import/order': [
+      'error',
       {
-        groups: [
-          // External packages:
-          ['^react', '^@?\\w'],
-          // Internal packages:
-          ['^@(/.*|$)'],
-          // Side effect imports:
-          ['^\\u0000'],
-          // Parent imports:
-          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-          // Other relative imports:
-          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-          // Style imports:
-          ['^.+\\.s?css$']
-        ]
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        pathGroups: [
+          {
+            pattern: '@/**',
+            group: 'internal'
+          }
+        ],
+        alphabetize: { order: 'asc' },
+        'newlines-between': 'always'
       }
     ],
+    /* [WARN] */
+    'no-console': ['warn', { allow: ['info', 'error'] }],
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/no-array-index-key': 'warn',
     'max-len': [
-      1,
+      'warn',
       {
         code: 100,
         ignoreComments: true,
@@ -70,29 +57,22 @@ module.exports = {
         ignoreTemplateLiterals: true
       }
     ],
-    /* [OFF === 0] */
-    // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
-    'import/prefer-default-export': 0,
-    // Common abbreviations are known and readable
-    'unicorn/prevent-abbreviations': 0,
-    // Airbnb prefers forEach
-    'unicorn/no-array-for-each': 0,
-    // Next.JS auto provides 'React'
-    'react/react-in-jsx-scope': 0,
-    // Useless:
-    'sort-imports': 0,
-    'import/order': 0,
-    'react/prop-types': 0,
-    'import/extensions': 0,
-    'consistent-return': 0,
-    'react/button-has-type': 0,
-    'react/no-unused-prop-types': 0,
-    'react/require-default-props': 0,
-    'no-template-curly-in-string': 0,
-    'react/jsx-props-no-spreading': 0,
-    'react/jsx-no-useless-fragment': 0,
-    'import/no-extraneous-dependencies': 0
-    // 'prettier/prettier': 0,
+    /* [OFF] */
+    // 'prettier/prettier': 'off',
+    'import/prefer-default-export': 'off',
+    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/no-array-for-each': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'import/extensions': 'off',
+    'consistent-return': 'off',
+    'react/button-has-type': 'off',
+    'react/no-unused-prop-types': 'off',
+    'react/require-default-props': 'off',
+    'no-template-curly-in-string': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-no-useless-fragment': 'off',
+    'import/no-extraneous-dependencies': 'off'
   },
   overrides: [
     {
@@ -100,7 +80,6 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 0,
         '@typescript-eslint/no-unsafe-call': 0,
-        // Allow CJS until ESM support improves
         '@typescript-eslint/no-var-requires': 0,
         'unicorn/prefer-module': 0
       }

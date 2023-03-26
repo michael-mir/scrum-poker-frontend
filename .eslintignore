@@ -1,14 +1,5 @@
-# Media files
-*.png
-*.svg
-*.jpg
-*.woff
-
-# Node artifact files
 /node_modules
-/dist
-
-# Other
-*.json
 /public
+/dist
+*.json
 **/.husky

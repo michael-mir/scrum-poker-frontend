@@ -1,29 +1,45 @@
 {
-  "private": true,
   "license": "ISC",
   "version": "0.1.0",
-  "name": "nextjs-template",
-  "author": "Michael Mironychev <michael.mironychev@gmail.com>",
+  "name": "scrum-pocker-frontend",
+  "description": "Web implementation of planning poker for scrum teams to determine the complexity of stories",
+  "author": {
+    "name": "SIBERIA CAN CODE 🧊",
+    "url": "https://github.com/siberiacancode"
+  },
+  "contributors": [
+    {
+      "name": "Dmitry Babin",
+      "url": "https://github.com/debabin"
+    },
+    {
+      "name": "Nursultan Zianurov",
+      "url": "https://github.com/MiaInturi"
+    },
+    {
+      "name": "Sergey Kryavkin",
+      "url": "https://github.com/RiceWithMeat"
+    },
+    {
+      "name": "Mironychev Michael",
+      "url": "https://github.com/michael-mir"
+    }
+  ],
   "scripts": {
+    "test": "jest",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --watch",
     "prepare": "husky install",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "lint": "eslint . --ext ts --ext tsx",
-    "stylelint": "stylelint '**/*.{css,scss}",
-    "prettier": "prettier --write '**/*.{js,ts,tsx,html}'",
+    "prettier": "prettier --write \"**/*.{js,ts,tsx,html}\"",
     "format": "yarn prettier && yarn lint --fix && yarn stylelint --fix",
-    "ci": "rm -rf node_modules && yarn install --immutable --immutable-cache --check-cache"
+    "ci": "shx rm -rf node_modules && yarn install --immutable --immutable-cache --check-cache"
   },
   "lint-staged": {
-    "*.js": "yarn prettier",
-    "*.{css,scss}": [
-      "yarn prettier",
-      "yarn stylelint"
-    ],
+    "*.{js,css}": "yarn prettier",
     "*.{ts,tsx}": [
       "yarn prettier",
       "yarn lint --fix",
@@ -55,8 +71,10 @@
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-styling": "^0.3.2",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/mdx2-csf": "^0.0.4",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
@@ -88,14 +106,27 @@
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.5",
-    "sass": "^1.59.3",
+    "shx": "^0.3.4",
     "storybook": "^6.5.16",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-order": "^6.0.3",
     "tailwindcss": "^3.2.7",
     "ts-jest": "^29.0.5",
     "typescript": "^5.0.2"
-  }
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "homepage": "https://https://github.com/michael-mir/scrum-poker-frontend",
+  "repository": {
+    "type": "git",
+    "url": "https://https://github.com/michael-mir/scrum-poker-frontend.git"
+  },
+  "keywords": [
+    "scrum",
+    "poker",
+    "frontend",
+    "client",
+    "story",
+    "points",
+    "planning"
+  ]
 }

@@ -14,22 +14,23 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
-    "paths": { "@/*": ["./*"] },
     "plugins": [{ "name": "next" }],
-    "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "declaration": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["./*"] }
   },
   "exclude": ["node_modules"],
   "include": [
+    "*.js",
     "**/*.ts",
     "**/*.tsx",
+    ".eslintrc.js",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ]

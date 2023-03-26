@@ -41,20 +41,20 @@ select {
 a {
   color: inherit;
   text-decoration: none;
+}
 
-  &:not([class]) {
-    text-decoration-skip-ink: auto;
-    color: #448aff;
-  }
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: #448aff;
 }
 
 button {
   background-color: transparent;
   border: none;
+}
 
-  &:hover {
-    cursor: pointer;
-  }
+button:hover {
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
