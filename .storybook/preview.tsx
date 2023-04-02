@@ -1,5 +1,4 @@
 import '/public/styles/globals.css';
-
 import { Parameters } from '@storybook/addons';
 import React from 'react';
 

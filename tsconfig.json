@@ -26,12 +26,5 @@
     "paths": { "@/*": ["./*"] }
   },
   "exclude": ["node_modules"],
-  "include": [
-    "*.js",
-    "**/*.ts",
-    "**/*.tsx",
-    ".eslintrc.js",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
-  ]
+  "include": ["*.js", "**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"]
 }

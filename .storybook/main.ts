@@ -1,5 +1,5 @@
-import * as path from 'path';
 import { StorybookConfig } from '@storybook/core-common';
+import * as path from 'path';
 
 const filterOutCssRule = (rule) => {
   const patterns = [/\.css$/i, /\.css$/];
