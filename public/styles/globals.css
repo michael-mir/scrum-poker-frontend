@@ -4,8 +4,8 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html,
@@ -18,12 +18,13 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 ul,
@@ -44,31 +45,39 @@ a {
 }
 
 a:not([class]) {
-  text-decoration-skip-ink: auto;
   color: #448aff;
+  text-decoration-skip-ink: auto;
 }
 
 button {
   background-color: transparent;
   border: none;
+  outline: none;
 }
 
 button:hover {
   cursor: pointer;
 }
 
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 @keyframes load {
   from {
-    transform: translateX(-45px);
+    transform: translateX(-45);
   }
 
   to {

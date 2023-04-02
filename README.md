@@ -1,2 +1,1 @@
-# scrum-poker-frontend
-Scrum Poker Frontend
+# 🃁 Scrum Poker Frontend

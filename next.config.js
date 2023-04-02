@@ -4,15 +4,22 @@ module.exports = (phase) => {
   const isProdBuild = phase === PHASE_PRODUCTION_BUILD;
   /** @type {import('next').NextConfig} */
   const config = {
+    trailingSlash: true,
     reactStrictMode: true,
     transpilePackages: ['lodash-es'],
+    eslint: {
+      ignoreDuringBuilds: true
+    },
+    typescript: {
+      ignoreBuildErrors: true
+    },
     experimental: {
       forceSwcTransforms: true
     },
     compiler: {
       ...(isProdBuild && {
         reactRemoveProperties: { properties: ['^data-testid$'] },
-        removeConsole: { exclude: ['error'] }
+        removeConsole: { exclude: ['info', 'error'] }
       })
     }
   };

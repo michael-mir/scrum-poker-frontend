@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 
-import styles from '@/public/styles/Home.module.css';
+import { Card } from '@/src/components/Card/Card';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,10 +16,11 @@ const Home = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/assets/favicon.ico' />
       </Head>
-      <main className={styles.main} role='main' data-testid='main'>
+      <main role='main' data-testid='main'>
         <h2 className={inter.className}>
-          Get started by editing&nbsp;<code className={styles.code}>pages/index.js</code>
+          Get started by editing&nbsp;<code>pages/index.js</code>
         </h2>
+        <Card />
       </main>
     </>
   );

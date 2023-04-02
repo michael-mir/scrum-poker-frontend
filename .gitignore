@@ -29,6 +29,7 @@ TEST*.xml
 Thumbs.db
 
 # IDE
+/.vscode
 /.history
 /.idea
 
