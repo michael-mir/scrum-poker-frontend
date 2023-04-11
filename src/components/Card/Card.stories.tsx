@@ -1,7 +1,7 @@
 import type { ComponentAnnotations } from '@storybook/csf/dist/story';
 
-import { Card } from './Card';
 import type { CardProps } from './Card';
+import { Card } from './Card';
 
 export default {
   title: 'components/Card',

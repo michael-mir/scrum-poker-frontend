@@ -4,8 +4,8 @@ import * as path from 'path';
 const filterOutCssRule = (rule) => {
   const patterns = [/\.css$/i, /\.css$/];
 
-  return patterns.every((p) => {
-    return rule.test.toString() !== p.toString();
+  return patterns.every((pattern) => {
+    return rule.test.toString() !== pattern.toString();
   });
 };
 

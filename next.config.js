@@ -7,12 +7,6 @@ module.exports = (phase) => {
     trailingSlash: true,
     reactStrictMode: true,
     transpilePackages: ['lodash-es'],
-    eslint: {
-      ignoreDuringBuilds: true
-    },
-    typescript: {
-      ignoreBuildErrors: true
-    },
     experimental: {
       forceSwcTransforms: true
     },
